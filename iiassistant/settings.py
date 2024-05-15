@@ -189,7 +189,7 @@ STATIC_URL = '/static/'
 #     os.path.join(BASE_DIR, 'static'),
 # ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'transcription/static')
 
 # Указание MEDIA_URL для доступа к медиа-файлам через URL
 MEDIA_URL = '/media/'
