@@ -33,7 +33,7 @@ DEBUG = os.getenv('DEBUG')
 ALLOWED_HOSTS =  []
 # ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 ALLOWED_HOSTS = [
-        '95.163.234.106',
+        '79.174.84.28',
 ]
 
 # Application definition
@@ -221,5 +221,5 @@ CORS_ALLOW_HEADERS = (
 
 CORS_ALLOWED_ORIGINS = [
     # "http://127.0.0.1:8000",
-    "http://95.163.234.106",
+    "http://79.174.84.28",
 ]
