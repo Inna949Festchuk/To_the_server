@@ -1,5 +1,5 @@
-# Хакатон MTC_True_Tech
-# Создание сервиса виртуального помошника
+# Хакатон Цифровой прорыв ДФО
+# Создание сервиса
 ## **Настройка сервиса**
 ### Создаем виртуальную среду
 ```cmd
@@ -12,6 +12,19 @@ venv\Scripts\activate
 ### Скачиваем библиотеки
 ```cmd
 python -m pip install -r requirements.txt
+```
+### [Устанавливаем библиотеку GigaChain (для работы с GigaChat API)](https://developers.sber.ru/docs/ru/gigachat/sdk/get-started/quickstart#ustanovka-sertifikatov-mintsifry)
+```cmd
+pip install gigachain
+```
+### [Устанавливаем сертификат Минцифры (для работы с GigaChat API)](https://developers.sber.ru/docs/ru/gigachat/sdk/get-started/quickstart#ustanovka-sertifikatov-mintsifry)
+1. Установите утилиту gigachain-cli
+```cmd
+pip install gigachain-cli
+```
+2. Установите сертификаты 
+```cmd
+gigachain install-rus-certs
 ```
 ### Устанавливаем СУБД Postgresql
 ### [Скачиваем кодек ffmpeg](https://ffmpeg.org/download.html) и размещаем в папку bin в корне проекта файл .exe для Windows или пакет для UNIX-систем
@@ -78,7 +91,7 @@ python manage.py runserver
 - вводим имя: admin, пароль: admin
 - видим таблицу с командами и таблицу с транскрибированной речью с микрафона
 ### Работа с сервисом
-- переходим по http://127.0.0.1:8000/transcription/record-audio/
+- переходим по http://127.0.0.1:8000/picasso/record-audio/
 - жмем запись и разрешаем запись с микрафона 
 - произносим запрос и останавливаем запись
 

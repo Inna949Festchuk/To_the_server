@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from rest_framework.response import Response
 from django.shortcuts import render
 from rest_framework import status
-from .serializers import AudioFileSerializer, UsersTextsSerializer
+from transcription.serializers import AudioFileSerializer, UsersTextsSerializer
 from rest_framework.views import APIView
 from transcription.models import Commands, UsersTexts
 # Поисковый вектор, Выделение основ слов и ранжирование
@@ -107,8 +107,8 @@ def execute_command(context, command):
     '''
     context - словарь используемый для ответа на POST-запрос
     '''
-    url = 'http://95.163.234.106:8000/transcription/api' + '/' + command + '/'
-    # url = 'http://127.0.0.1:8000/transcription/api' + '/' + command + '/'
+    # url = 'http://95.163.234.106:8000/transcription/api' + '/' + command + '/'
+    url = 'http://127.0.0.1:8000/transcription/api' + '/' + command + '/'
     
     # Данные для отправки в POST-запросе (Если надо что-то передать, например сумму и кому перводить)
     data = {

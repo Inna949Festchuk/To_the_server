@@ -14,8 +14,8 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# BASE_DIR = Path(__file__).resolve().parent.parent
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,10 +27,10 @@ SECRET_KEY = 'django-insecure-64&9d##dfbc6_zt(w$_gd0#%bsb6g1q6iuj*t4=@e&ne4=2&uz
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = os.getenv('DEBUG')
+# DEBUG = True
+DEBUG = os.getenv('DEBUG')
 
-# ALLOWED_HOSTS =  []
+ALLOWED_HOSTS =  []
 # ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 ALLOWED_HOSTS = [
         '95.163.234.106',
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.postgres', # Операции полнотекстового поиска стр.177
     
     'transcription', # Наше приложение 
+    'picasso', # Наше приложение 2
 ]
 
 MIDDLEWARE = [
@@ -184,12 +185,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Статику расположим внутри приложения 'transcription' 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static'),
-# ]
+# Статику расположим внутри приложения 'transcription' и 'picasso'
+STATICFILES_DIRS = [
+    # os.path.join(BASE_DIR, 'transcription', 'static'),
+    os.path.join(BASE_DIR, 'picasso', 'static'),
+]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'transcription/static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'transcription/static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'picasso/static')
 
 # Указание MEDIA_URL для доступа к медиа-файлам через URL
 MEDIA_URL = '/media/'
@@ -218,5 +221,5 @@ CORS_ALLOW_HEADERS = (
 
 CORS_ALLOWED_ORIGINS = [
     # "http://127.0.0.1:8000",
-    "http://95.163.234.106:8000",
+    "http://95.163.234.106",
 ]
